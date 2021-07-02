@@ -10,7 +10,7 @@ html{
 }
 body{
 	font-family:  Comic Sans MS, Comic Sans, cursive;
-	background-color: #f5dcffd5;
+	background-color: #fdf1ff;
 }
 .header{
 	color: #434449f5;
@@ -39,7 +39,7 @@ body{
 }
 input[type=button]{ 
 	font-family:  Comic Sans MS, Comic Sans, cursive;
-	color: #4f4558;
+	color: #574864;
 	font-size: 22px;
     font-weight: bold;
     width: 120px;
@@ -50,19 +50,19 @@ input[type=button]{
     border-radius: 9px;
     background:  #fab4dffa;
     transition: 0.2s;
-	border-color: #f797d2bb;
+	border-color: #f8a8d9bb;
 }
 input[type=button]:hover{ 
 	background:  #e198ffab;
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: #d18fee;
+	border-color: #dda5f5de;
 }
 input[type=button]:active{ 
-	background:  #d89df0;
+	background:  #db87fca8;
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: #c87ae9ce;
+	border-color: #d795f3de;
 }
