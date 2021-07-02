@@ -9,6 +9,7 @@ html{
 	align-content: center;
 }
 body{
+	font-family:  Comic Sans MS, Comic Sans, cursive;
 	background-color: #f5dcffd5;
 }
 h1{
@@ -32,11 +33,12 @@ h1{
 	align-content: center;
 }
 input[type=button]{ 
+	font-family:  Comic Sans MS, Comic Sans, cursive;
 	color: #291549;
 	font-size: 18px;
     font-weight: bold;
     width: 100px;
-    padding: 7px;
+    padding: 5px;
     outline: none;
     border-width: 2px 0;
     border-style: solid none;
@@ -46,16 +48,16 @@ input[type=button]{
 	border-color: #2cd3e2;
 }
 input[type=button]:hover{ 
-	background:  #d89df0;
-	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: #9f59bc;
-}
-input[type=button]:active{ 
 	background:  #e198ffab;
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: #9f59bc;
+	border-color: #d18fee;
+}
+input[type=button]:active{ 
+	background:  #d89df0;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	border-color: #c87ae9;
 }
