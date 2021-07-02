@@ -12,10 +12,15 @@ body{
 	font-family:  Comic Sans MS, Comic Sans, cursive;
 	background-color: #f5dcffd5;
 }
-h1{
-	margin-bottom: 50px;
-}
 .header{
+	color: #434449f5;
+    text-align: center;
+    margin: 5px;
+	font-size: 48px;
+	margin-bottom: 50px;
+    font-weight: bold;
+}
+.content{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -24,7 +29,7 @@ h1{
 	align-content: center;
 }
 .buttons{ 
-    width: 300px;
+    width: 350px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -34,18 +39,18 @@ h1{
 }
 input[type=button]{ 
 	font-family:  Comic Sans MS, Comic Sans, cursive;
-	color: #291549;
-	font-size: 18px;
+	color: #4f4558;
+	font-size: 22px;
     font-weight: bold;
-    width: 100px;
-    padding: 5px;
+    width: 120px;
+    padding: 3px;
     outline: none;
     border-width: 2px 0;
     border-style: solid none;
-    border-radius: 6px;
-    background:  #5bf5e0fa;
+    border-radius: 9px;
+    background:  #fab4dffa;
     transition: 0.2s;
-	border-color: #2cd3e2;
+	border-color: #f797d2bb;
 }
 input[type=button]:hover{ 
 	background:  #e198ffab;
@@ -59,5 +64,5 @@ input[type=button]:active{
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: #c87ae9;
+	border-color: #c87ae9ce;
 }
