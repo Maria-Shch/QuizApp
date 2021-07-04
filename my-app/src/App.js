@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route path='/' component={MainPage}/>
+        <Route path='/index' component={MainPage}/>
       </div>
     </BrowserRouter>
   );
