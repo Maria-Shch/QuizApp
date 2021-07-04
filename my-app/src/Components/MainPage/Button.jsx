@@ -2,7 +2,9 @@ import cl from './Button.module.css';
 
 function Button(props) {
     return (
-        <input className={cl.button} type = 'button' id = {props.id} value = {props.value}></input>
+        <form action={props.path}>
+            <button className={cl.button} id = {props.id} type="submit">{props.value}</button>
+        </form>
     );
 }
 
