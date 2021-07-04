@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainPage from './Components/MainPage.jsx';
+import MainPage from './Components/MainPage/MainPage.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
