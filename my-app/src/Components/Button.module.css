@@ -1,0 +1,31 @@
+.button{ 
+	font-family:  Comic Sans MS, Comic Sans, cursive;
+	color: #574864;
+	font-size: 22px;
+    font-weight: bold;
+    width: 120px;
+    padding: 3px;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-radius: 9px;
+    background:  #fab4dffa;
+    transition: 0.2s;
+	border-color: #f8a8d9bb;
+}
+
+.button:hover{ 
+	background:  #e198ffab;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	border-color: #dda5f5de;
+}
+
+.button:active{ 
+	background:  #db87fca8;
+	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
+	border-color: #d795f3de;
+}
