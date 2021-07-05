@@ -3,8 +3,8 @@
 	color: #574864;
 	font-size: 22px;
     font-weight: bold;
-    width: 120px;
-    padding: 3px;
+    min-width: 120px;
+    padding: 7px;
     outline: none;
     border-width: 2px 0;
     border-style: solid none;

@@ -36,8 +36,17 @@ body{
 	justify-content: space-between;
 	align-items: center;
 	align-content: space-between;;
-	width: 300px;
+	width: 400px;
     height: 120px;
+}
+.possibleAnswers_row{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-between;;
+	width: 100%;
 }
 .div_buttons{ 
 	display: flex;
