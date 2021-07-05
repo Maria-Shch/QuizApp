@@ -1,13 +1,13 @@
 import cl from './MainPage.module.css';
-import Button from './Button.jsx';
+import Button from '../Button/Button.jsx';
 
 function MainPage() {
   return (
     <div className={cl.content}>
       <p className={cl.header}>QuizApp</p>
       <div className={cl.buttons}>
-        <Button id='quiz' value='Квиз' path='quiz'/>
-        <Button id='history' value='История' path='history'/>
+        <Button className='ButtonMainPage' id='quiz' value='Квиз' path='quiz'/>
+        <Button className='ButtonMainPage' id='history' value='История' path='history'/>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import cl from './QuestionPage.module.css';
-import Button from './Button';
+import Button from './../Button/Button';
 import PossibleAnswer from './PossibleAnswer';
 
 function QuestionPage() {
@@ -13,11 +13,11 @@ function QuestionPage() {
           <PossibleAnswer id='8' value='8'/>
       </div>
       <div className={cl.div_next}>
-        <Button id='next' value='Дальше' path='next'/>
+        <Button className='ButtonQuestionPage' id='next' value='Дальше' path='next'/>
       </div>
       <div className={cl.div_buttons}>
-         <Button id='index' value='На главную' path='index'/>
-         <Button id='history' value='История' path='history'/>
+         <Button className='ButtonQuestionPage' id='index' value='На главную' path='index'/>
+         <Button className='ButtonQuestionPage' id='history' value='История' path='history'/>
       </div>
     </div>
   );
