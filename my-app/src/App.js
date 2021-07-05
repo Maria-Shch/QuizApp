@@ -1,22 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route} from "react-router-dom";
+import MainPage from './Components/MainPage/MainPage';
+import QuestionPage from './Components/QuestionPage/QuestionPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <MyApp />
-      </header>
-    </div>
-  );
-}
-
-function MyApp() {
-  return (
-    <div className="MyApp">
-      <h1>Hello world!</h1>
-    </div>
+    <BrowserRouter>
+      <Route path='/index' component={MainPage}/>
+      <Route path='/quiz' component={QuestionPage}/>
+    </BrowserRouter>
   );
 }
 
