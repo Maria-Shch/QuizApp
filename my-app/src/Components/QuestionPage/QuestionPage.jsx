@@ -27,7 +27,7 @@ function QuestionPage(props) {
         </div>
       </div>
       <div className={cl.div_next}>
-        <Button className='ButtonQuestionPage' id='next' value='Дальше' path = {nextQuestion} />
+        <Button className='ButtonQuestionPage' id='next' value={valueOfButton(questionNumber, numberOfQuestions)} path = {checkPath(nextQuestion, numberOfQuestions)} />
       </div>
       <div className={cl.div_buttons}>
         <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
@@ -35,6 +35,18 @@ function QuestionPage(props) {
       </div>
     </div>
   );
+}
+
+//При достижении последнего вопроса в квизе значение кнопки меняется с 'Дальше' на 'Закончить'
+function valueOfButton(questionNumber, numberOfQuestions){
+  if (questionNumber < numberOfQuestions) return 'Дальше';
+  else return 'Закончить';
+}
+
+//При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
+function checkPath(nextQuestion, numberOfQuestions){
+  if (nextQuestion <= numberOfQuestions) return nextQuestion;
+  else return './../result';
 }
 
 export default QuestionPage;
