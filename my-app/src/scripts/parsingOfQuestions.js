@@ -16,12 +16,10 @@ export function parsingOfQuestions() {
 }
 
 class Question {
-    constructor(id, question,correctAnswer, answers, serialNumber, numberOfQuestions) {
+    constructor(id, question,correctAnswer, answers) {
         this.id = id;
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.answers = answers;
-        this.serialNumber = serialNumber;
-        this.numberOfQuestions = numberOfQuestions;
     }
 }

@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Route path='/index' component={MainPage}/>
-      <Route path='/quiz' component={QuestionPage}/>
+      <Route path='/quiz/:numberQuestion' component={QuestionPage}/>
     </BrowserRouter>
   );
 }
