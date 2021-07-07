@@ -1,13 +1,12 @@
-export function parsingOfQuestions() {
-    let questions = require('./../data/questions.json');
-    let size = questions.quizes[0].questions.length;
+export function parsingQuizToQuestions(quiz) {
+    let size = quiz[0].questions.length;
     let arrQuestions = [];
     for (let i = 0, serialNumber=0; i < size; i++) {
         arrQuestions[i] = new Question(
-            questions.quizes[0].questions[i].id, 
-            questions.quizes[0].questions[i].question,
-            questions.quizes[0].questions[i].correctAnswer, 
-            questions.quizes[0].questions[i].answers,
+            quiz[0].questions[i].id, 
+            quiz[0].questions[i].question,
+            quiz[0].questions[i].correctAnswer, 
+            quiz[0].questions[i].answers,
             ++serialNumber,
             size
         );

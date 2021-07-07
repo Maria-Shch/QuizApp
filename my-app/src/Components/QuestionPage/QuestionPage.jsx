@@ -2,10 +2,13 @@ import cl from './QuestionPage.module.css';
 import Button from './../Button/Button';
 import ButtonNext from './../Button/ButtonNext';
 import PossibleAnswers from './PossibleAnswers';
-import { parsingOfQuestions } from './../../scripts/parsingOfQuestions.js'
+import { parsingQuizToQuestions } from './../../scripts/parsingQuizToQuestions.js';
+import { getQuizById } from './../../scripts/getQuizById'
 
 function QuestionPage(props) {
-  let questions = parsingOfQuestions();
+  let quizId = '07e6bda'; 
+  let quiz = getQuizById(quizId);
+  let questions = parsingQuizToQuestions(quiz);
 
   let questionNumber = props.match.params.numberQuestion;
   let indexArray = questionNumber - 1;
