@@ -1,5 +1,6 @@
 import cl from './QuestionPage.module.css';
 import Button from './../Button/Button';
+import ButtonNext from './../Button/ButtonNext';
 import PossibleAnswers from './PossibleAnswers';
 import { parsingOfQuestions } from './../../scripts/parsingOfQuestions.js'
 
@@ -23,7 +24,7 @@ function QuestionPage(props) {
         id3={questions[indexArray].answers[3]} value3={questions[indexArray].answers[3]}
       />
       <div className={cl.div_next}>
-        <Button className='ButtonQuestionPage' id='next' value={valueOfButton(questionNumber, numberOfQuestions)} path={checkPath(nextQuestion, numberOfQuestions)} />
+        <ButtonNext question={questions[indexArray]} answers={questions[indexArray].answers} className='ButtonQuestionPage' id='next' value={valueOfButton(questionNumber, numberOfQuestions)} path={checkPath(nextQuestion, numberOfQuestions)} />
       </div>
       <div className={cl.div_buttons}>
         <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
