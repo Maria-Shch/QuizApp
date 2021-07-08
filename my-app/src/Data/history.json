@@ -1,0 +1,40 @@
+{
+    "games": [
+        {
+            "id": "07e6bda",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "7"
+        },
+        {
+            "id": "dfdgd55",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "5"
+        },
+        {
+            "id": "jfuf87b",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "6"
+        },
+        {
+            "id": "sjsdh64",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "1"
+        },
+        {
+            "id": "hshsdjr",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "2"
+        },
+        {
+            "id": "028jxjd",
+            "date": "1623741413",
+            "quizId": "07e6bda",
+            "correctAnswers": "3"
+        }
+    ]
+}

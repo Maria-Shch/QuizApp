@@ -31,7 +31,7 @@ function QuestionPage(props) {
       </div>
       <div className={cl.div_buttons}>
         <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
-        <Button className='ButtonQuestionPage' id='history' value='История' path='history' />
+        <Button className='ButtonQuestionPage' id='history' value='История' path='/../history' />
       </div>
     </div>
   );
