@@ -1,15 +1,17 @@
+import classNames from 'classnames';
+import clIndex from './../../../../index.module.css';
 import cl from './HistoryPage.module.css';
-import Button from './../Button/Button';
-import TableWithResults from './TableWithResults';
+import Button from '../../../shared/buttons/Button/Button';
+import TableWithResults from '../TableWithResults/TableWithResults';
 
 function HistoryPage() {
     return (
-        <div className={cl.content}>
-            <p className={cl.header}>
+        <div className={classNames(clIndex.content, cl.content)}>
+            <p className={classNames(clIndex.header, cl.header)}>
                 История
             </p>
             <TableWithResults />
-            <div className={cl.div_buttons}>
+            <div className={clIndex.div_buttons}>
                 <Button className='ButtonQuestionPage' id='index' value='На главную' path='/index' />
                 <Button className='ButtonQuestionPage' id='quiz' value='Квиз' path='quiz/1' />
             </div>

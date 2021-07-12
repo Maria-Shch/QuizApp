@@ -8,6 +8,7 @@
 	width: 400px;
     height: 120px;
 }
+
 .possibleAnswers_row{
     display: flex;
 	flex-direction: row;
@@ -21,14 +22,13 @@
 .form_radio_btn input[type=radio] {
 	display: none;
 }
+
 .form_radio_btn label {
 	cursor: pointer;
 	user-select: none;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	font-family:  Comic Sans MS, Comic Sans, cursive;
 	color: #574864;
 	font-size: 22px;

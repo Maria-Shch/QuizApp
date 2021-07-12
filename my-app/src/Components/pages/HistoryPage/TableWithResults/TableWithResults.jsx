@@ -1,10 +1,10 @@
+import classNames from 'classnames';
+import clIndex from './../../../../index.module.css';
 import cl from './TableWithResults.module.css';
-import { parsingHistoryFromFile } from './../../scripts/parsingHistoryFromFile';
-import { getQuizById } from './../../scripts/getQuizById';
-import { parsingQuizToQuestions } from './../../scripts/parsingQuizToQuestions';
+import { parsingHistoryFromFile, getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
 
 function TableWithResults() {
-    let games = parsingHistoryFromFile();
+    const games = parsingHistoryFromFile();
 
     let getHistoryContent = () => {
         let content = [];
@@ -21,7 +21,7 @@ function TableWithResults() {
     };
 
     return (
-        <div className={cl.content}>
+        <div className={classNames(clIndex.content, cl.content)}>
             <table>
                 <thead>
                     <tr>

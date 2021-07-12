@@ -1,9 +1,7 @@
 .button{ 
 	font-family:  Comic Sans MS, Comic Sans, cursive;
 	color: #574864;
-	font-size: 22px;
     font-weight: bold;
-    width: 120px;
     padding: 3px;
     outline: none;
     border-width: 2px 0;

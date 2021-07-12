@@ -1,23 +1,24 @@
+import classNames from 'classnames';
+import clIndex from './../../../../index.module.css';
 import cl from './QuestionPage.module.css';
-import Button from './../Button/Button';
-import ButtonNext from './../Button/ButtonNext';
-import PossibleAnswers from './PossibleAnswers';
-import { parsingQuizToQuestions } from './../../scripts/parsingQuizToQuestions.js';
-import { getQuizById } from './../../scripts/getQuizById'
+import Button from '../../../shared/buttons/Button/Button';
+import ButtonNext from '../../../shared/buttons/ButtonNext/ButtonNext';
+import PossibleAnswers from '../PossibleAnswers/PossibleAnswers';
+import { getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
 
 function QuestionPage(props) {
-  let quizId = '07e6bda'; 
-  let quiz = getQuizById(quizId);
-  let questions = parsingQuizToQuestions(quiz);
+  const quizId = '07e6bda'; 
+  const quiz = getQuizById(quizId);
+  const questions = parsingQuizToQuestions(quiz);
 
-  let questionNumber = props.match.params.numberQuestion;
-  let indexArray = questionNumber - 1;
-  let nextQuestion = Number(questionNumber) + 1;
-  let numberOfQuestions = questions.length;
+  const questionNumber = props.match.params.numberQuestion;
+  const indexArray = questionNumber - 1;
+  const nextQuestion = Number(questionNumber) + 1;
+  const numberOfQuestions = questions.length;
 
   return (
-    <div className={cl.content}>
-      <p className={cl.header}>
+    <div className={classNames(clIndex.content, cl.content)}>
+      <p className={classNames(clIndex.header, cl.header)}>
         {questionNumber}/{numberOfQuestions}. {questions[indexArray].question}
       </p>
       <PossibleAnswers
@@ -27,9 +28,16 @@ function QuestionPage(props) {
         id3={questions[indexArray].answers[3]} value3={questions[indexArray].answers[3]}
       />
       <div className={cl.div_next}>
-        <ButtonNext question={questions[indexArray]} answers={questions[indexArray].answers} className='ButtonQuestionPage' id='next' value={valueOfButton(questionNumber, numberOfQuestions)} path={checkPath(nextQuestion, numberOfQuestions)} />
+        <ButtonNext 
+          question={questions[indexArray]} 
+          answers={questions[indexArray].answers} 
+          className='ButtonQuestionPage' 
+          id='next' 
+          value={valueOfButton(questionNumber, numberOfQuestions)} 
+          path={checkPath(nextQuestion, numberOfQuestions)} 
+        />
       </div>
-      <div className={cl.div_buttons}>
+      <div className={clIndex.div_buttons}>
         <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
         <Button className='ButtonQuestionPage' id='history' value='История' path='/../history' />
       </div>

@@ -1,9 +1,9 @@
 import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
-import MainPage from './Components/MainPage/MainPage';
-import QuestionPage from './Components/QuestionPage/QuestionPage';
-import ResultPage from './Components/ResultPage/ResultPage';
-import HistoryPage from './Components/HistoryPage/HistoryPage';
+import MainPage from './components/pages/MainPage/MainPage'
+import QuestionPage from './components/pages/QuestionPage/QuestionPage/QuestionPage';
+import ResultPage from './components/pages/ResultPage/ResultPage';
+import HistoryPage from './components/pages/HistoryPage/HistoryPage/HistoryPage';
 
 function App() {
   return (
