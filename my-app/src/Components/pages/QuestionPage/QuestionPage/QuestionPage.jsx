@@ -21,12 +21,7 @@ function QuestionPage(props) {
       <p className={classNames(clIndex.header, cl.header)}>
         {questionNumber}/{numberOfQuestions}. {questions[indexArray].question}
       </p>
-      <PossibleAnswers
-        id0={questions[indexArray].answers[0]} value0={questions[indexArray].answers[0]}
-        id1={questions[indexArray].answers[1]} value1={questions[indexArray].answers[1]}
-        id2={questions[indexArray].answers[2]} value2={questions[indexArray].answers[2]}
-        id3={questions[indexArray].answers[3]} value3={questions[indexArray].answers[3]}
-      />
+      <PossibleAnswers answers = {questions[indexArray].answers}/>
       <div className={cl.div_next}>
         <ButtonNext 
           question={questions[indexArray]} 

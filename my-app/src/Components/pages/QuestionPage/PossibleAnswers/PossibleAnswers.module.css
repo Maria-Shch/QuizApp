@@ -1,22 +1,12 @@
 .possibleAnswers{
     display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	align-content: space-between;;
 	width: 400px;
-    height: 120px;
-}
-
-.possibleAnswers_row{
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: space-between;
-	width: 100%;
+    min-height: 120px;
 }
 
 .form_radio_btn input[type=radio] {
@@ -24,6 +14,7 @@
 }
 
 .form_radio_btn label {
+	margin-bottom: 10px;
 	cursor: pointer;
 	user-select: none;
 	display: flex;
