@@ -12,7 +12,7 @@ class QuestionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentResult:0,
+      currentResult: 0,
       questionNumber: props.match.params.numberQuestion,
       nextQuestion: Number(props.match.params.numberQuestion) + 1,
       indexArray: Number(props.match.params.numberQuestion) - 1,
@@ -35,22 +35,12 @@ class QuestionPage extends React.Component {
     let possibleAnswers = this.state.questions[this.state.indexArray].answers;
     let res = this.state.currentResult;
 
-    if (document.getElementById(possibleAnswers[0]).checked && possibleAnswers[0] == correctAnswer) {
-      res++;
+    for (let i = 0; i < possibleAnswers.length; i++) {
+      if (document.getElementById(possibleAnswers[i]).checked && possibleAnswers[i] == correctAnswer) {
+        res++;
+      }
+      document.getElementById(possibleAnswers[i]).checked = false;
     }
-    if (document.getElementById(possibleAnswers[1]).checked && possibleAnswers[1] == correctAnswer) {
-      res++;
-    }
-    if (document.getElementById(possibleAnswers[2]).checked && possibleAnswers[2] == correctAnswer) {
-      res++;
-    }
-    if (document.getElementById(possibleAnswers[3]).checked && possibleAnswers[3] == correctAnswer) {
-      res++;
-    }
-    document.getElementById(possibleAnswers[0]).checked = false;
-    document.getElementById(possibleAnswers[1]).checked = false;
-    document.getElementById(possibleAnswers[2]).checked = false;
-    document.getElementById(possibleAnswers[3]).checked = false;
     return res;
   }
 
@@ -61,6 +51,7 @@ class QuestionPage extends React.Component {
       nextQuestion: Number(this.state.nextQuestion) + 1,
       currentResult: this.checkAnswer()
     });
+    
     //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
     if (this.state.nextQuestion <= this.state.numberOfQuestions) window.history.pushState(null, null, this.state.nextQuestion);
     else this.props.history.push('./../result');
