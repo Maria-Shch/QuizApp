@@ -3,8 +3,8 @@ import clIndex from './../../../index.module.css';
 import cl from './ResultPage.module.css';
 import Button from '../../shared/buttons/Button/Button';
 
-function ResultPage() {
-  const res = localStorage.getItem('currentRes');
+function ResultPage(props) {
+  const res = props.result;
 
   return (
     <div className={classNames(clIndex.content, cl.content)}>

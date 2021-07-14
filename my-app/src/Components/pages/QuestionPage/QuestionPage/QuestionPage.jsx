@@ -16,12 +16,32 @@ class QuestionPage extends React.Component {
       questionNumber: props.match.params.numberQuestion,
       nextQuestion: Number(props.match.params.numberQuestion) + 1,
       indexArray: Number(props.match.params.numberQuestion) - 1,
-      questions: parsingQuizToQuestions(getQuizById('07e6bda')),
-      numberOfQuestions: parsingQuizToQuestions(getQuizById('07e6bda')).length
+      questions: parsingQuizToQuestions(getQuizById(props.quizId)),
+      numberOfQuestions: parsingQuizToQuestions(getQuizById(props.quizId)).length
     };
     this.next = this.next.bind(this);
     this.valueOfButton = this.valueOfButton.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
+    this.sendFinalResult = this.sendFinalResult.bind(this);
+  }
+
+  next() {
+    let res = this.checkAnswer();
+    this.setState({
+      indexArray: Number(this.state.indexArray) + 1,
+      questionNumber: Number(this.state.questionNumber) + 1,
+      nextQuestion: Number(this.state.nextQuestion) + 1,
+      currentResult: res
+    });
+
+    //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
+    if (this.state.nextQuestion <= this.state.numberOfQuestions) {
+      window.history.pushState(null, null, this.state.nextQuestion);
+    }
+    else {
+      this.props.history.push('./../result');
+      this.sendFinalResult(res);
+    }
   }
 
   //При достижении последнего вопроса в квизе значение кнопки меняется с 'Дальше' на 'Закончить'
@@ -44,24 +64,15 @@ class QuestionPage extends React.Component {
     return res;
   }
 
-  next() {
-    this.setState({
-      indexArray: Number(this.state.indexArray) + 1,
-      questionNumber: Number(this.state.questionNumber) + 1,
-      nextQuestion: Number(this.state.nextQuestion) + 1,
-      currentResult: this.checkAnswer()
-    });
-    
-    //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
-    if (this.state.nextQuestion <= this.state.numberOfQuestions) window.history.pushState(null, null, this.state.nextQuestion);
-    else this.props.history.push('./../result');
+  sendFinalResult(result) {
+    this.props.setResult(result);
   }
 
   render() {
     return (
       <div className={classNames(clIndex.content, cl.content)}>
         <p className={classNames(clIndex.header, cl.header)}>
-          {this.state.questionNumber}/{this.state.numberOfQuestions}. {this.state.questions[this.state.indexArray].question}
+          {this.state.questionNumber}/{this.state.numberOfQuestions}. {this.state.questions[this.state.indexArray].question}.
         </p>
         <PossibleAnswers answers={this.state.questions[this.state.indexArray].answers} />
         <div className={cl.div_next}>
@@ -80,7 +91,5 @@ class QuestionPage extends React.Component {
     );
   }
 }
-
-
 
 export default QuestionPage;
