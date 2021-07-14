@@ -12,12 +12,16 @@ class QuestionPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentResult:0,
       questionNumber: props.match.params.numberQuestion,
       nextQuestion: Number(props.match.params.numberQuestion) + 1,
+      indexArray: Number(props.match.params.numberQuestion) - 1,
+      questions: parsingQuizToQuestions(getQuizById('07e6bda')),
       numberOfQuestions: parsingQuizToQuestions(getQuizById('07e6bda')).length
     };
     this.next = this.next.bind(this);
     this.valueOfButton = this.valueOfButton.bind(this);
+    this.checkAnswer = this.checkAnswer.bind(this);
   }
 
   //При достижении последнего вопроса в квизе значение кнопки меняется с 'Дальше' на 'Закончить'
@@ -26,10 +30,36 @@ class QuestionPage extends React.Component {
     else return 'Закончить';
   }
 
+  checkAnswer() {
+    let correctAnswer = this.state.questions[Number(this.state.questionNumber) - 1].correctAnswer;
+    let possibleAnswers = this.state.questions[this.state.indexArray].answers;
+    let res = this.state.currentResult;
+
+    if (document.getElementById(possibleAnswers[0]).checked && possibleAnswers[0] == correctAnswer) {
+      document.getElementById(possibleAnswers[0]).checked = false;
+      res++;
+    }
+    if (document.getElementById(possibleAnswers[1]).checked && possibleAnswers[1] == correctAnswer) {
+      document.getElementById(possibleAnswers[1]).checked = false;
+      res++;
+    }
+    if (document.getElementById(possibleAnswers[2]).checked && possibleAnswers[2] == correctAnswer) {
+      document.getElementById(possibleAnswers[2]).checked = false;
+      res++;
+    }
+    if (document.getElementById(possibleAnswers[3]).checked && possibleAnswers[3] == correctAnswer) {
+      document.getElementById(possibleAnswers[3]).checked = false;
+      res++;
+    }
+    return res;
+  }
+
   next() {
     this.setState({
-      questionNumber: this.state.nextQuestion,
-      nextQuestion: Number(this.state.questionNumber) + 2
+      indexArray: Number(this.state.indexArray) + 1,
+      questionNumber: Number(this.state.questionNumber) + 1,
+      nextQuestion: Number(this.state.nextQuestion) + 1,
+      currentResult: this.checkAnswer()
     });
     //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
     if (this.state.nextQuestion <= this.state.numberOfQuestions) window.history.pushState(null, null, this.state.nextQuestion);
@@ -37,24 +67,18 @@ class QuestionPage extends React.Component {
   }
 
   render() {
-    const quizId = '07e6bda';
-    const quiz = getQuizById(quizId);
-    const questions = parsingQuizToQuestions(quiz);
-
-    const indexArray = this.state.questionNumber - 1;
-    const numberOfQuestions = questions.length;
     return (
       <div className={classNames(clIndex.content, cl.content)}>
         <p className={classNames(clIndex.header, cl.header)}>
-          {this.state.questionNumber}/{numberOfQuestions}. {questions[indexArray].question}
+          {this.state.questionNumber}/{this.state.numberOfQuestions}. {this.state.questions[this.state.indexArray].question}
         </p>
-        <PossibleAnswers answers={questions[indexArray].answers} />
+        <PossibleAnswers answers={this.state.questions[this.state.indexArray].answers} />
         <div className={cl.div_next}>
           <button
-            className={classNames(clButton.button, ButtonQuestionPage.button)} 
+            className={classNames(clButton.button, ButtonQuestionPage.button)}
             onClick={() => this.next()}
             type="submit">
-              {this.valueOfButton()}
+            {this.valueOfButton()}
           </button>
         </div>
         <div className={clIndex.div_buttons}>
