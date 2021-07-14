@@ -31,26 +31,26 @@ class QuestionPage extends React.Component {
   }
 
   checkAnswer() {
-    let correctAnswer = this.state.questions[Number(this.state.questionNumber) - 1].correctAnswer;
+    let correctAnswer = this.state.questions[this.state.indexArray].correctAnswer;
     let possibleAnswers = this.state.questions[this.state.indexArray].answers;
     let res = this.state.currentResult;
 
     if (document.getElementById(possibleAnswers[0]).checked && possibleAnswers[0] == correctAnswer) {
-      document.getElementById(possibleAnswers[0]).checked = false;
       res++;
     }
     if (document.getElementById(possibleAnswers[1]).checked && possibleAnswers[1] == correctAnswer) {
-      document.getElementById(possibleAnswers[1]).checked = false;
       res++;
     }
     if (document.getElementById(possibleAnswers[2]).checked && possibleAnswers[2] == correctAnswer) {
-      document.getElementById(possibleAnswers[2]).checked = false;
       res++;
     }
     if (document.getElementById(possibleAnswers[3]).checked && possibleAnswers[3] == correctAnswer) {
-      document.getElementById(possibleAnswers[3]).checked = false;
       res++;
     }
+    document.getElementById(possibleAnswers[0]).checked = false;
+    document.getElementById(possibleAnswers[1]).checked = false;
+    document.getElementById(possibleAnswers[2]).checked = false;
+    document.getElementById(possibleAnswers[3]).checked = false;
     return res;
   }
 
