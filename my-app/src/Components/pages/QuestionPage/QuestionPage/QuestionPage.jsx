@@ -2,7 +2,8 @@ import classNames from 'classnames';
 import clIndex from './../../../../index.module.css';
 import cl from './QuestionPage.module.css';
 import Button from '../../../shared/buttons/Button/Button';
-import ButtonNext from '../../../shared/buttons/ButtonNext/ButtonNext';
+import clButton from './../../../shared/buttons/Button/Button.module.css';
+import ButtonQuestionPage from './../../../shared/buttons/Button/ButtonQuestionPage.module.css';
 import PossibleAnswers from '../PossibleAnswers/PossibleAnswers';
 import { getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
 import React from 'react';
@@ -12,28 +13,27 @@ class QuestionPage extends React.Component {
     super(props);
     this.state = {
       questionNumber: props.match.params.numberQuestion,
-      nextQuestion: Number(props.match.params.numberQuestion) + 1
+      nextQuestion: Number(props.match.params.numberQuestion) + 1,
+      numberOfQuestions: parsingQuizToQuestions(getQuizById('07e6bda')).length
     };
     this.next = this.next.bind(this);
+    this.valueOfButton = this.valueOfButton.bind(this);
   }
+
   //При достижении последнего вопроса в квизе значение кнопки меняется с 'Дальше' на 'Закончить'
-  valueOfButton(questionNumber, numberOfQuestions) {
-    if (questionNumber < numberOfQuestions) return 'Дальше';
+  valueOfButton() {
+    if (this.state.questionNumber < this.state.numberOfQuestions) return 'Дальше';
     else return 'Закончить';
   }
 
-  //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
-  checkPath(nextQuestion, numberOfQuestions) {
-    if (this.state.nextQuestion <= numberOfQuestions) return this.state.nextQuestion;
-    else return './../result';
-  }
-
-  next(path) {
+  next() {
     this.setState({
       questionNumber: this.state.nextQuestion,
       nextQuestion: Number(this.state.questionNumber) + 2
     });
-    window.history.pushState(null, null, path);
+    //При достижении последнего вопроса нажатие кнопки будет перенаправлять на страницу с результатом
+    if (this.state.nextQuestion <= this.state.numberOfQuestions) window.history.pushState(null, null, this.state.nextQuestion);
+    else this.props.history.push('./../result');
   }
 
   render() {
@@ -51,22 +51,11 @@ class QuestionPage extends React.Component {
         <PossibleAnswers answers={questions[indexArray].answers} />
         <div className={cl.div_next}>
           <button
-            onClick={() => this.next(this.state.nextQuestion)}
-            type="submit">
-            Дальше
-          </button>
-
-
-          
-          {/* <ButtonNext
+            className={classNames(clButton.button, ButtonQuestionPage.button)} 
             onClick={() => this.next()}
-            question={questions[indexArray]}
-            answers={questions[indexArray].answers}
-            className='ButtonQuestionPage'
-            id='next'
-            value={valueOfButton(this.state.questionNumber, numberOfQuestions)}
-            path={checkPath(nextQuestion, numberOfQuestions)}
-          /> */}
+            type="submit">
+              {this.valueOfButton()}
+          </button>
         </div>
         <div className={clIndex.div_buttons}>
           <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
