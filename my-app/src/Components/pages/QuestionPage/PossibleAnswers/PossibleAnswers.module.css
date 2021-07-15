@@ -36,17 +36,17 @@
 }
  
 .form_radio_btn input[type=radio]:checked + label {
-	background:  #72ff56e0;
+	background:  #87f8fca8;
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: rgba(160, 236, 98, 0.671);
+	border-color: #a3ddffb2;
 }
  
 .form_radio_btn label:hover {
-	background:  #ccff56e0;
+	background:  #cef8fad3;
 	-webkit-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	-moz-box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
 	box-shadow: 7px 9px 13px -9px rgba(0, 0, 0, 0.58);
-	border-color: rgba(176, 236, 98, 0.671);
+	border-color: #a9f9fca8;
 }
