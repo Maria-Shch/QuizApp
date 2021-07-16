@@ -28,6 +28,8 @@ function TableWithResults() {
                 );
             }
         }
+        //Урезаю количество записей в таблице до 10 для сохранения её приемлимого размера
+        while (content.length > 10) content.shift();
         return content;
     };
 
