@@ -45,15 +45,18 @@ export function parsingQuizToQuestions(quiz) {
 export function saveToLocalStorage(objectWithResults) {
     let h = localStorage.getItem('history');
     let history;
-    
+
     if (h === null) {
         history = {
             "games": []
         };
     }
-    else  history = JSON.parse(localStorage.getItem('history'));
+    else history = JSON.parse(localStorage.getItem('history'));
 
     history.games.push(objectWithResults);
     localStorage.setItem('history', JSON.stringify(history));
 }
 
+export function getID() {
+    return Math.random().toString(36).substr(2, 9);
+}

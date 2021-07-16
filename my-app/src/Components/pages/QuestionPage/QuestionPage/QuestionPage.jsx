@@ -5,7 +5,7 @@ import Button from '../../../shared/buttons/Button/Button';
 import clButton from './../../../shared/buttons/Button/Button.module.css';
 import ButtonQuestionPage from './../../../shared/buttons/Button/ButtonQuestionPage.module.css';
 import PossibleAnswers from '../PossibleAnswers/PossibleAnswers';
-import { getQuizById, parsingQuizToQuestions, saveToLocalStorage } from '../../../../utils/utilsFunctions';
+import { getQuizById, parsingQuizToQuestions, saveToLocalStorage, getID } from '../../../../utils/utilsFunctions';
 import React from 'react';
 
 class QuestionPage extends React.Component {
@@ -41,7 +41,7 @@ class QuestionPage extends React.Component {
     }
     else {
       const objectForHistoryFile = {
-        id: "dvfvfbg",
+        id: getID(),
         date: new Date().toDateString(),
         quizId: this.state.quizId,
         correctAnswers: res
