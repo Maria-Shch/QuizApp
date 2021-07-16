@@ -13,16 +13,26 @@ function ResultPage(props) {
   let getText = (correctAnswers, percentageResult) => {
     if (percentageResult < 50) {
       return (
-        <p className={classNames(clIndex.header, cl.header)}>
-          Попробуйте ещё раз. Из {numberOfQuestions} вопросов вы ответили на {correctAnswers}.
-        </p>
+        <div>
+          <p className={classNames(clIndex.header, cl.header)}>
+            Из {numberOfQuestions} вопросов правильно вы ответили на {correctAnswers}.
+          </p>
+          <p className={classNames(clIndex.header, cl.header)}>
+            Попробуйте ещё раз.
+          </p>
+        </div>
       );
     }
     else {
       return (
-        <p className={classNames(clIndex.header, cl.header)}>
-          Превосходно!  Из {numberOfQuestions} вопросов вы ответили на {correctAnswers}.
-        </p>
+        <div>
+          <p className={classNames(clIndex.header, cl.header)}>
+            Из {numberOfQuestions} вопросов вы правильно ответили на {correctAnswers}.
+          </p>
+          <p className={classNames(clIndex.header, cl.header)}>
+            Превосходно!
+          </p>
+        </div>
       )
     }
   }

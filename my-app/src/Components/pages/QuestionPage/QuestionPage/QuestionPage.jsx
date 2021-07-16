@@ -92,7 +92,7 @@ class QuestionPage extends React.Component {
             {this.valueOfButton()}
           </button>
         </div>
-        <div className={clIndex.div_buttons}>
+        <div className={classNames(clIndex.div_buttons, cl.div_buttons)}>
           <Button className='ButtonQuestionPage' id='index' value='На главную' path='/../index' />
           <Button className='ButtonQuestionPage' id='history' value='История' path='/../history' />
         </div>

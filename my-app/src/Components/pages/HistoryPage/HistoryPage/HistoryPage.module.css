@@ -1,9 +1,10 @@
 .header{
 	font-size: 48px;
+	margin-bottom: 10px;
 }
 .content{
 	align-items: unset;
-	width: 600px;
+	width: 700px;
 }
 .subtitle{
 	text-align: right;

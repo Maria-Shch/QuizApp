@@ -5,7 +5,7 @@
 	justify-content: space-between;
 	align-items: center;
 	align-content: space-between;;
-	width: 400px;
+	width: 450px;
     min-height: 120px;
 }
 
@@ -22,7 +22,7 @@
 	justify-content: center;
 	font-family:  Comic Sans MS, Comic Sans, cursive;
 	color: #574864;
-	font-size: 22px;
+	font-size: 25px;
     font-weight: bold;
     padding: 10px;
     outline: none;
@@ -32,7 +32,7 @@
     background:  #f5fd7f;
     transition: 0.2s;
 	border-color: #e1ee70fa;
-	min-width: 120px;
+	min-width: 140px;
 }
  
 .form_radio_btn input[type=radio]:checked + label {
