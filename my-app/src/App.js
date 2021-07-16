@@ -11,7 +11,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: 0
+      result: 0,
+      quizId: '07e6bda'
     };
     this.setResult = this.setResult.bind(this);
   }
@@ -23,8 +24,8 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/index" component={MainPage} />
-          <Route path="/quiz/:numberQuestion" render={(props) => <QuestionPage quizId='07e6bda' setResult={this.setResult} {...props}/>} />
-          <Route exact path="/result"  render={() => <ResultPage result={this.state.result}/>} />
+          <Route path="/quiz/:numberQuestion" render={(props) => <QuestionPage quizId={this.state.quizId} setResult={this.setResult} {...props}/>} />
+          <Route exact path="/result"  render={() => <ResultPage result={this.state.result} quizId={this.state.quizId}/>} />
           <Route exact path="/history" component={HistoryPage} />
         </Switch>
       </BrowserRouter >

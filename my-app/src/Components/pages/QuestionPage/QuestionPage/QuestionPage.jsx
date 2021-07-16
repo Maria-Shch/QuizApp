@@ -5,7 +5,7 @@ import Button from '../../../shared/buttons/Button/Button';
 import clButton from './../../../shared/buttons/Button/Button.module.css';
 import ButtonQuestionPage from './../../../shared/buttons/Button/ButtonQuestionPage.module.css';
 import PossibleAnswers from '../PossibleAnswers/PossibleAnswers';
-import { getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
+import { getQuizById, parsingQuizToQuestions, saveToLocalStorage } from '../../../../utils/utilsFunctions';
 import React from 'react';
 
 class QuestionPage extends React.Component {
@@ -17,7 +17,8 @@ class QuestionPage extends React.Component {
       nextQuestion: Number(props.match.params.numberQuestion) + 1,
       indexArray: Number(props.match.params.numberQuestion) - 1,
       questions: parsingQuizToQuestions(getQuizById(props.quizId)),
-      numberOfQuestions: parsingQuizToQuestions(getQuizById(props.quizId)).length
+      numberOfQuestions: parsingQuizToQuestions(getQuizById(props.quizId)).length,
+      quizId: props.quizId
     };
     this.next = this.next.bind(this);
     this.valueOfButton = this.valueOfButton.bind(this);
@@ -39,6 +40,14 @@ class QuestionPage extends React.Component {
       window.history.pushState(null, null, this.state.nextQuestion);
     }
     else {
+      const objectForHistoryFile = {
+        id: "dvfvfbg",
+        date: new Date().toDateString(),
+        quizId: this.state.quizId,
+        correctAnswers: res
+      }
+      saveToLocalStorage(objectForHistoryFile);
+
       this.props.history.push('./../result');
       this.sendFinalResult(res);
     }

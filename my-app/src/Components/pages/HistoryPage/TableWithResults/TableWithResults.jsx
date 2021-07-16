@@ -1,21 +1,32 @@
 import classNames from 'classnames';
 import clIndex from './../../../../index.module.css';
 import cl from './TableWithResults.module.css';
-import { parsingHistoryFromFile, getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
+import { getHistoryFromLocalStorage, getQuizById, parsingQuizToQuestions } from '../../../../utils/utilsFunctions';
 
 function TableWithResults() {
-    const games = parsingHistoryFromFile();
+    const games = getHistoryFromLocalStorage();
 
     let getHistoryContent = () => {
         let content = [];
-        for (let i = 0, number = 1; i < games.length; i++) {
+        if (games.length == 0) {
             content.push(
-                <tr key={i}>
-                    <td key={games[i].id}>{number++}</td>
-                    <td>{games[i].correctAnswers}</td>
-                    <td>{parsingQuizToQuestions(getQuizById(games[i].quizId)).length}</td>
+                <tr>
+                    <td>Будьте первым,</td>
+                    <td>кто пройдёт</td>
+                    <td>квиз!</td>
                 </tr>
             );
+        }
+        else {
+            for (let i = 0, number = 1; i < games.length; i++) {
+                content.push(
+                    <tr key={i}>
+                        <td key={games[i].id}>{number++}</td>
+                        <td>{games[i].correctAnswers}</td>
+                        <td>{parsingQuizToQuestions(getQuizById(games[i].quizId)).length}</td>
+                    </tr>
+                );
+            }
         }
         return content;
     };

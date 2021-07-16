@@ -14,6 +14,7 @@ function PossibleAnswers(props) {
         }
         return content;
     };
+
     return (
         <div className={cl.possibleAnswers}>
             {getAnswersContent()}
