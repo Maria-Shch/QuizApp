@@ -72,7 +72,7 @@ class QuestionPage extends React.Component {
     return (
       <div className={classNames(clIndex.content, cl.content)}>
         <p className={classNames(clIndex.header, cl.header)}>
-          {this.state.questionNumber}/{this.state.numberOfQuestions}. {this.state.questions[this.state.indexArray].question}.
+          {this.state.questionNumber}/{this.state.numberOfQuestions}. {this.state.questions[this.state.indexArray].question}
         </p>
         <PossibleAnswers answers={this.state.questions[this.state.indexArray].answers} />
         <div className={cl.div_next}>
