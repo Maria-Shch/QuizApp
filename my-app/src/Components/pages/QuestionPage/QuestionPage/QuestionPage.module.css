@@ -1,0 +1,21 @@
+.header{
+	font-size: 30px;
+}
+.content{
+	width: 700px;
+	height: 435px;
+}
+.div_next{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+	margin-top: 20px;
+}
+.div_buttons{
+	width: 	1300px;
+	margin-top: 20px;
+}
